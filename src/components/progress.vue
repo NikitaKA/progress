@@ -151,8 +151,12 @@
         }
       },
       stroke () {
+        if (this.strokeColor) {
+          return this.strokeColor;
+        }
+
         let ret
-        switch (this.st) {
+          switch (this.st) {
           case 'success':
             ret = '#13ce66'
             break
@@ -166,7 +170,7 @@
             ret = '#ff4949'
             break
           default:
-            ret = this.strokeColor ? this.strokeColor : '#20a0ff'
+            ret = '#20a0ff'
         }
         return ret
       },
